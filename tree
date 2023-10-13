@@ -1,0 +1,120 @@
+/*create/build->Binary tree
+#include <iostream>
+#include<queue>
+
+using namespace std;
+class node
+{
+public:
+     int data;
+     node* left;
+     node* right;
+     node(int d)//then make constractor
+     {
+          this->data=d;
+          this->left=NULL;
+          this->right=NULL;
+     }
+};
+node* buildTree(node* root) //function used to build tree 
+{
+     //data of root node give
+     cout<<"enter the data:"<<endl;
+     int data;
+     cin>>data;
+     //create  root node
+     root=new node(data);//then  constractor call all data inicialized
+     if(data ==-1)
+     {
+          return NULL;
+     }
+     //tree built by  recursion
+     cout<<"enter data for inserting in left"<<data<<endl;
+     root->left=buildTree(root->left);
+     cout<<"enter data for inserting  in right"<<data<<endl;
+     root->right=buildTree(root->right);
+     return root;
+     
+     
+}
+//level order traversal
+void levelOrderTraversal(node* root)
+{
+     queue<node*>q;//queue makes node* type ke
+     q.push(root);
+     while(!q.empty())
+     {
+          node* temp=q.front();
+          cout<<temp->data<<" ";
+          q.pop();
+          if(temp->left)
+          {
+               q.push(temp->left);
+          }
+          if(temp->right)
+          {
+               q.push(temp->right);
+          }
+     }
+     
+}
+//inorder traversal
+//inorder rule(LNR)->L=left node,N=middle node,R=right node
+void inorder(node* root)//function write inorder in which root pass 
+{ // solve recursion method
+     //base case
+     if(root==NULL)
+     {
+          return;
+     }
+     inorder(root->left);//left me call mar de //L
+     cout<<root->data<<" ";//print node//N
+     inorder(root->right);//R
+     
+     
+     
+}
+//preorder traversal
+void preorder(node* root)
+{
+     if(root==NULL)
+     {
+
+          return;
+     }
+     cout<<root->data<<" ";
+     preorder(root->left);
+     preorder(root->right);
+}
+//post order traversal
+void postorder(node* root)
+{
+     if(root==NULL)
+     {
+          return;
+     }
+     postorder(root->left);
+     postorder(root->right);
+     cout<<root->data<<" ";
+}
+
+int main()
+{
+    node* root=NULL;
+   // creating a tree
+    root=buildTree(root);
+    //1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1 (input)
+    //level order
+    cout<<"printing the level order traversal output "<<endl;
+    levelOrderTraversal(root);
+    //cout<<"inorder traversal is:";
+    //inorder(root);
+    //cout<<"preorder traversal is:";
+    //preorder(root);
+    cout<<"postorder traversal is:";
+    postorder(root);
+    
+
+    return 0;
+}
+//there are way traversal in tree->level order traversal,inorder,preorder,postorder traversal
