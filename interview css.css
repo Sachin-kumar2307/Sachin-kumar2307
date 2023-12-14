@@ -1,0 +1,47 @@
+1.what is css?
+->Cascading style sheets(css) is a rule based language that applies styling to HTML elements.
+2.why use css?
+->we write css rules in html elements(<p>,<imag>),and modify properties of those elements such as color,background color,width,border,thickness,font size,etc
+3. what are child selector?
+-> ex. p > ul{font-size:16px;}
+
+4.current version of css?
+->current version of css is css3.
+
+#  the css is not case-sensitive,but if an XHTML doctype is used,then css class names will be case-sensitive in some browser.
+
+5.difference between margin and padding?
+-> padding is the area inside the border and margin is the area outside the border.
+6.what are pseudo classes?
+->pseudo classes allow you to identify HTML elements on characteristics.
+ex: a:link{font-color:red;}
+ex2.a:visited{font-color:green;}
+ex3.a:hover{font-color:yellow;}
+
+7.what is comment in css?
+->comment is used only reading but not effect  display on browser window.
+8.what is grouping?
+->it is ues same text on more than one properties
+ex: h1,h2,h3{
+    background:#fff;font-size:14px;
+}
+9.what is difference between an ID selector and class?
+->ID is used # and class  is used dot(.)
+  id is used for single element and class is used mutipal element.
+class->a class is a style.
+id->an  id selector is a name assigned to a specific style.
+10.way of define a color in html?
+->there is three way of defining a color in html 1.HEX 2.RGB 3.NAME(ie red)
+ex: .colorname
+   {
+    color:red;
+    color:#ff0000;
+    color:rgb(0,0,225);
+   }
+
+   11.differnce between visibility:hidden;and display:none;?
+   ->visibility:Hidden-it is not visible but takes up its original space.
+   Display:None:it is hidden and take up absolutely no space as if it was never there.
+12.what are different ways to apply styles to a web page?
+->there are three wau of apply css on web page 
+1.inline css 2.internal css 3.External css 
